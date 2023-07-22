@@ -6,8 +6,9 @@ TagManager:
   tags:
   - Suelo
   - PlataformaC
-  - PalataformaM
   - Pared
+  - Puerta
+  - PlataformaM
   layers:
   - Default
   - TransparentFX
