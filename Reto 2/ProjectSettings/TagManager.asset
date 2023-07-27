@@ -9,6 +9,7 @@ TagManager:
   - Pared
   - Puerta
   - PlataformaM
+  - Box
   layers:
   - Default
   - TransparentFX

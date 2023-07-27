@@ -10,15 +10,16 @@ public class puertas : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other){
 
-        if(other.CompareTag("Player")) {
+        if(other.CompareTag("Player") || (other.CompareTag("Box"))) {
              Debug.Log("si sirvio");
             pEntrada.SetActive(false);
             pSalida.SetActive(true);
     }
     }
 
-    private void OnTriggerExit2D(Collider2D other){
-        if(other.CompareTag("Player"))
+    private void OnTriggerExit2D(Collider2D other) {
+
+        if(other.CompareTag("Player") || (other.CompareTag("Box")))
         {
             Debug.Log("confirmo");
         pEntrada.SetActive(true);
@@ -26,15 +27,4 @@ public class puertas : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
