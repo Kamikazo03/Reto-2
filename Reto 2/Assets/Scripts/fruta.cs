@@ -8,6 +8,7 @@ public class fruta : MonoBehaviour
     //public GameObject efecto;
     public float cantidadPuntos;
     public Puntaje puntaje;
+    public Puertapuntaje puertapuntaje;
 
     private void OnTriggerEnter2D(Collider2D other){
 
@@ -15,6 +16,7 @@ public class fruta : MonoBehaviour
         {
             //Instantiate(efecto, transform.position, Quaternion.identity);
             puntaje.SumarPuntos(cantidadPuntos);
+            puertapuntaje.SumarPuntos(cantidadPuntos);
             //AudioManager.Instance.PlaySFX("coin");
             Destroy(gameObject);
         }

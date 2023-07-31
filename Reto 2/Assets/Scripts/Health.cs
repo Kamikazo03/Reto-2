@@ -52,6 +52,17 @@ public class Health : MonoBehaviour
 
     }
 
+    public void Heal(int heal)
+    {
+        if((health + heal) > numOfHearts)
+        {
+            health = numOfHearts;
+
+        }else{
+            health = health + heal;
+        }
+    }
+
 
     // Update is called once per frame
     void Update()

@@ -13,7 +13,11 @@ public class TakeDamage : MonoBehaviour
             Debug.Log("enemigo");
             health.efectoDamage(new Vector2(transform.position.x,transform.position.y), transform.localScale.x);
         }
+        if(other.CompareTag("Box")){
+            Destroy(gameObject);
+        }
     }
+
 
 }
 
