@@ -1,29 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Puertallave : MonoBehaviour
 {
-    public GameObject pEntrada ;
-    public GameObject pSalida ;
 
+    public int scena;
 
     private void OnTriggerEnter2D(Collider2D other){
 
         if(other.CompareTag("Player") || (other.CompareTag("Box"))) {
-             Debug.Log("si sirvio");
-            pEntrada.SetActive(false);
-            pSalida.SetActive(true);
+        SceneManager.LoadScene(scena);
     }
     }
 
-    private void OnTriggerExit2D(Collider2D other) {
-
-        if(other.CompareTag("Player") || (other.CompareTag("Box")))
-        {
-            Debug.Log("confirmo");
-        pEntrada.SetActive(true);
-        pSalida.SetActive(false);
-        }
-    }
 }

@@ -17,7 +17,7 @@ public class fruta : MonoBehaviour
             //Instantiate(efecto, transform.position, Quaternion.identity);
             puntaje.SumarPuntos(cantidadPuntos);
             puertapuntaje.SumarPuntos(cantidadPuntos);
-            //AudioManager.Instance.PlaySFX("coin");
+            AudioManager.Instance.PlaySFX("Points");
             Destroy(gameObject);
         }
     }

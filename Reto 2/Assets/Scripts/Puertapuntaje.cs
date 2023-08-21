@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Puertapuntaje : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Puertapuntaje : MonoBehaviour
     public GameObject pEntrada ;
     public GameObject pSalida ;
     public GameObject Lapuerta;
+    public int Escena;
 
 
     public void SumarPuntos(float puntosEntrada)
@@ -17,6 +19,9 @@ public class Puertapuntaje : MonoBehaviour
 
         if(puntos > abierto ){
             Lapuerta.GetComponent<Collider2D>().isTrigger = true;
+            pEntrada.SetActive(false);
+            pSalida.SetActive(true);
+            AudioManager.Instance.PlaySFX("PuertaFinal");
           }
         
     }
@@ -24,20 +29,9 @@ public class Puertapuntaje : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
 
         if(other.CompareTag("Player") || (other.CompareTag("Box"))) {
-             Debug.Log("si sirvio");
-            pEntrada.SetActive(false);
-            pSalida.SetActive(true);
+            AudioManager.Instance.musicSource.Stop();
+            AudioManager.Instance.PlaySFX("Final");
+            SceneManager.LoadScene(Escena);
     }
     }
-
-    private void OnTriggerExit2D(Collider2D other) {
-
-        if(other.CompareTag("Player") || (other.CompareTag("Box")))
-        {
-            Debug.Log("confirmo");
-        pEntrada.SetActive(true);
-        pSalida.SetActive(false);
-        }
-    }
-
 }

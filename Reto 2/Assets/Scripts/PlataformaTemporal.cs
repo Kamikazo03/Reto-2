@@ -32,7 +32,7 @@ public class PlataformaTemporal : MonoBehaviour
             StartCoroutine(Caida(collision));
         }
 
-        if(collision.gameObject.CompareTag("Suelo") || collision.gameObject.CompareTag("PlataformaC") || collision.gameObject.CompareTag("PlataformaM") || collision.gameObject.CompareTag("Puerta")){
+        if(collision.gameObject.CompareTag("Suelo") || collision.gameObject.CompareTag("PlataformaC") || collision.gameObject.CompareTag("PlataformaM") || collision.gameObject.CompareTag("Puerta") || collision.gameObject.CompareTag("Pared")){
             Destroy(gameObject);
         }
     }

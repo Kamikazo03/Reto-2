@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
 
     public int health;
     public int numOfHearts;
+    public GameObject gameOver;
 
     public Image[] hearts;
     public Sprite fullHeart;
@@ -31,11 +32,15 @@ public class Health : MonoBehaviour
         
         health = health - Damage;
         Debug.Log("vida: " + health);
-        if(health <= 0){
+
+        if(health <= 0){            
+            gameOver.SetActive(true);
+            AudioManager.Instance.musicSource.Stop();
+            AudioManager.Instance.PlaySFX("GameOver");
             Destroy(gameObject);
         }
-
     }
+
 
     public void efectoDamage(Vector2 posicion, float direccion){
         Debug.Log("efecto damage");        
