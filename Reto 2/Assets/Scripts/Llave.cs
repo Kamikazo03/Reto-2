@@ -19,6 +19,7 @@ public class Llave : MonoBehaviour
             naveA.SetActive(false);
             naveP.SetActive(true);
             ayuda.SetActive(false);
+            //AudioManager.Instance.PlaySFX("Motor");
             Destroy(llave);
         }
     }
